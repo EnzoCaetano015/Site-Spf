@@ -128,7 +128,7 @@ export default function AdminLoginPage() {
                         <Typography
                             component="a"
                             onClick={()=>navigate('/Home')}
-                            sx={{ color: "rgba(255,255,255,0.8)", fontSize: "1rem", textDecoration: "none"}}
+                            sx={{ color: "rgba(255,255,255,0.8)", fontSize: "1rem", textDecoration: "none", cursor:"pointer"}}
                         >
                             Return to Home Page
                         </Typography>
