@@ -48,7 +48,7 @@ const DashboardContent = () => {
     useEffect(() => {
         async function fetchTeams() {
             try {
-                const res = await axios.get('http://127.0.0.1:8000/times');
+                const res = await axios.get('https://spf-api.caetanodev.com/times');
                 const data = Array.isArray(res.data) ? res.data : [];
 
                 const enriched = data.map((team, index) => ({
@@ -78,7 +78,7 @@ const DashboardContent = () => {
         setSaving(true);
         Promise.all(
             teams.map(team =>
-                axios.put(`http://127.0.0.1:8000/times/${team.id}/pontuacao`, {
+                axios.put(`https://spf-api.caetanodev.com/times/${team.id}/pontuacao`, {
                     pontos: team.points
                 })
             )

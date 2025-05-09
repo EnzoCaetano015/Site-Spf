@@ -17,7 +17,7 @@ export function useTeams() {
   useEffect(() => {
     async function fetchTeams() {
       try {
-        const res = await axios.get("http://localhost:8000/times")
+        const res = await axios.get("https://spf-api.caetanodev.com/times")
         const teamColors = [
           "#ef4444", "#3b82f6", "#eab308", "#22c55e", "#ec4899", "#a855f7"
         ]
