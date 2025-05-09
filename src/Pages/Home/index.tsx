@@ -302,7 +302,7 @@ export default function HomePage() {
             </Styled.Container>
 
             <Styled.Footer>
-                <p>© 2025 Mythology Challenge. All rights reserved.</p>
+                <p>© Semana Paulo Freire 2025. Todos os direitos reservados.</p>
             </Styled.Footer>
         </Styled.Wrapper>
     )
