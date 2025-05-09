@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
         setIsLoading(true)
 
         try {
-            const res = await axios.post("http://localhost:8000/login", {
+            const res = await axios.post("https://spf-api.caetanodev.com/login", {
                 usuario: username,
                 senha: password,
             })
