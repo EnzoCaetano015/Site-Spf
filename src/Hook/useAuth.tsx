@@ -60,7 +60,7 @@ export default function RequireAuth({ children }: Props) {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate("/admin/login")
+      navigate("/Admin")
     }
   }, [isAuthenticated, navigate])
 
