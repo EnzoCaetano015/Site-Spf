@@ -60,7 +60,7 @@ export default function HomePage() {
                             </p>
                         </div>
                         <div className="heroImage">
-                            <img src="" alt="" />
+                            <img src="../../../public/logo.jpg" alt="" width={450} />
                         </div>
                     </motion.div>
                 </Styled.HeroSection>
