@@ -127,7 +127,7 @@ export default function AdminLoginPage() {
                     <Box mt={4} textAlign="center">
                         <Typography
                             component="a"
-                            href="/Home"
+                            onClick={()=>navigate('/Home')}
                             sx={{ color: "rgba(255,255,255,0.8)", fontSize: "1rem", textDecoration: "none"}}
                         >
                             Return to Home Page
