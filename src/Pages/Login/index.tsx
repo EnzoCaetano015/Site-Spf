@@ -7,13 +7,16 @@ import {
 } from "@mui/material"
 import * as Styled from "./login.style"
 import axios, { AxiosError } from "axios"
+import { useAuth } from "../../Hook/useAuth"
 
 export default function AdminLoginPage() {
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
+    const { login } = useAuth()
 
     const navigate = useNavigate()
 
@@ -29,6 +32,7 @@ export default function AdminLoginPage() {
             })
 
             if (res.data.message === "Login bem-sucedido") {
+                login(username)
                 navigate("/Admin")
             }
         } catch (err) {
