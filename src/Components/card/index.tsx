@@ -9,9 +9,11 @@ import {
     CircularProgress,
     Alert,
     Stack,
+    Box,
 } from '@mui/material';
-import { Save, Landmark, JapaneseYen, Gem, Anchor, Pyramid, Clover, } from 'lucide-react';
+import { Save, } from 'lucide-react';
 import axios from 'axios';
+import { Anubis, Ciclone, Hammer, Poseidon, Tample, Flower } from '../../Assets';
 
 interface Team {
     id: number;
@@ -30,14 +32,14 @@ const teamColors = [
     '#a855f7'
 ];
 
-const teamIcons: ReactNode[] = [
-    <Landmark size={24} />,
-    <JapaneseYen size={24} />,
-    <Gem size={24} />,
-    <Anchor size={24} />,
-    <Pyramid size={24} />,
-    <Clover size={24} />
-];
+const teamIcons = [
+    <Hammer />,
+    <Flower />,
+    <Tample />,
+    <Poseidon />,
+    <Anubis />,
+    <Ciclone />
+]
 
 const DashboardContent = () => {
     const [teams, setTeams] = useState<Team[]>([]);
@@ -124,7 +126,17 @@ const DashboardContent = () => {
                         <CardContent>
                             <Stack sx={{ alignItems: "center", justifyContent: "center" }}>
                                 <Typography variant="h6" gutterBottom display="flex" alignItems="center" gap={1}>
-                                    <span style={{ color: team.color }}>{team.icon}</span>
+                                    <Box
+                                        sx={{
+                                            width: 80,
+                                            height: 80,
+                                            '& svg': {
+                                                width: '100%',
+                                                height: '100%',
+                                            },
+                                        }}>
+                                        {team.icon}
+                                    </Box>
                                     {team.name}
                                 </Typography>
                                 <TextField

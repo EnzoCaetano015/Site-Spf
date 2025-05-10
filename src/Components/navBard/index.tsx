@@ -1,7 +1,8 @@
 import { Button, Stack, Typography, type AppBarProps } from "@mui/material"
 import * as Styled from "./index.styled"
-import { Home, LogIn, LogOut, Shield } from "lucide-react"
+import { Home, LogIn, LogOut } from "lucide-react"
 import { useNavigate } from "react-router-dom"
+import { Logo } from "../../Assets"
 
 interface NavBarProps extends AppBarProps {
     adm: boolean
@@ -20,9 +21,10 @@ export const NavBar = ({ adm, ...rest }: NavBarProps) => {
                     variant="h5"
                     sx={{
                         display: "flex",
+                        alignItems:"center",
                         gap: 1
                     }}>
-                    <Shield size={20} color="#fde047" />
+                     <Logo width={50} height={50}/>
                     SPF
                 </Typography>
 

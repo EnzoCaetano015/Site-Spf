@@ -1,5 +1,5 @@
 import { useEffect, useState, } from "react"
-import { Anchor, Clover, Gem, JapaneseYen, Landmark, Pyramid } from "lucide-react"
+import { Anubis, Ciclone, Hammer, Poseidon, Tample, Flower } from "../Assets"
 import axios from "axios"
 
 interface Team {
@@ -23,12 +23,12 @@ export function useTeams() {
         ]
 
         const teamIcons = [
-          <Landmark size={30} />,
-          <JapaneseYen size={30} />,
-          <Gem size={30} />,
-          <Anchor size={30} />,
-          <Pyramid size={30} />,
-          <Clover size={30} />
+          <Hammer />,
+          <Flower />,
+          <Tample />,
+          <Poseidon />,
+          <Anubis />,
+          <Ciclone />
         ]
 
         const enriched = res.data.map((team: object, index: number) => ({

@@ -6,7 +6,7 @@ body {
 }
 
 #root {
-  height: 95%;
+  height: 100%;
 }
 
 body::-webkit-scrollbar {

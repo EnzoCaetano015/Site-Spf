@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Anchor, Clock, Clover, Gem, JapaneseYen, Landmark, Pyramid, Trophy } from "lucide-react"
+import { Clock, Trophy } from "lucide-react"
 import * as Styled from "./home.styled"
 import { Grid, Paper, Typography, Box, Stack, Button, Avatar, CircularProgress, TableContainer, Table, TableHead, TableBody, TableCell, TableRow } from "@mui/material"
 import { useTeams } from "../../Hook/use-teams"
 import { NavBar } from "../../Components/navBard"
+import { Anubis, Ciclone, Hammer, Poseidon, Tample, Flower, Logo } from "../../Assets"
 
 const TARGET_DATE = new Date("2025-05-29T00:00:00").getTime()
 
@@ -60,7 +61,7 @@ export default function HomePage() {
                             </p>
                         </div>
                         <div className="heroImage">
-                            <img src="logo.jpg" alt="" width={450} />
+                            <Logo width={600} height={600}/>
                         </div>
                     </motion.div>
                 </Styled.HeroSection>
@@ -174,13 +175,14 @@ export default function HomePage() {
                                                 textAlign: "center",
                                                 width: 200,
                                                 bgcolor: "#2D304A",
+                                                minHeight: 190
                                             }}
                                                 elevation={6}>
                                                 <Avatar
                                                     sx={{
-                                                        bgcolor: team.color,
-                                                        width: 56,
-                                                        height: 56,
+                                                        bgcolor: "#2D304A",
+                                                        width: 70,
+                                                        height: 70,
                                                         mx: "auto",
                                                         mb: 1,
                                                     }}
@@ -275,12 +277,18 @@ export default function HomePage() {
                         </h2>
                         <Styled.TeamGrid>
                             {[
-                                { name: "Mitologia Nórdica - 1A", color: "#ef4444", icon: <Landmark size={30} /> },
-                                { name: "Mitologia Japonesa - 2A", color: "#3b82f6", icon: <JapaneseYen size={30} /> },
-                                { name: "El Dorado - 1B", color: "#eab308", icon: <Gem size={30} /> },
-                                { name: "Atlântida - 2B", color: "#22c55e", icon: <Anchor size={30} /> },
-                                { name: "Mitologia Egípcia - 1C", color: "#ec4899", icon: <Pyramid size={30} /> },
-                                { name: "Mitologia Brasileira - 2C", color: "#a855f7", icon: <Clover size={30}/>},
+                                { name: "Mitologia Nórdica - 1A", color: "#ef4444", icon: <Hammer />, texto: "Guerreiros de Asgard, empunhando o poder do trovão de Thor e a sabedoria de Odin, enfrentam desafios com o poder dos antigos vikings." },
+
+                                { name: "Mitologia Japonesa - 2A", color: "#3b82f6", icon: <Flower />, texto: "Guiados pelos espíritos do Xintoísmo e pelo código dos samurais, eles misturam harmonia e precisão como as flores de cerejeira ao vento da primavera." },
+
+                                { name: "El Dorado - 1B", color: "#eab308", icon: <Tample />, texto: "Buscadores da cidade dourada, eles enfrentam desafios com a astúcia de antigos exploradores e a riqueza do conhecimento esquecido." },
+
+                                { name: "Atlântida - 2B", color: "#22c55e", icon: <Poseidon />, texto: "Descendentes da civilização perdida, eles aproveitam os segredos das profundezas e a sabedoria de um mundo sob as ondas." },
+
+                                { name: "Mitologia Egípcia - 1C", color: "#ec4899", icon: <Anubis />, texto: "Abençoados pelos faraós e guiados por Anúbis e Ísis, eles resolvem os enigmas da esfinge e comandam os antigos poderes do Nilo." },
+
+                                { name: "Mitologia Brasileira - 2C", color: "#a855f7", icon: <Ciclone />, texto: "Guardiões dos mistérios da Amazônia, eles dançam com a astúcia do Saci e o encantamento das águas de Iara e das matas de Curupira." },
+
                             ].map((team, index) => (
                                 <motion.div
                                     key={index}
@@ -289,11 +297,16 @@ export default function HomePage() {
                                     transition={{ delay: 0.2 * index, duration: 0.5 }}
                                     className="teamCard"
                                 >
-                                    <div className="teamIcon" style={{ backgroundColor: team.color }}>
+                                    <Box
+                                        className="teamIcon"
+                                    >
                                         {team.icon}
-                                    </div>
+                                    </Box>
+
                                     <div className="teamName">{team.name}</div>
-                                    <div className="teamDesc">Competing in challenges of wisdom, strength, and strategy.</div>
+                                    <div className="teamDesc">
+                                        {team.texto}
+                                    </div>
                                 </motion.div>
                             ))}
                         </Styled.TeamGrid>

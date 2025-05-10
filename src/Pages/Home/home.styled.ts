@@ -2,6 +2,7 @@ import { styled } from "@mui/material";
 
 export const Wrapper = styled("div")(() => ({
   minHeight: "100vh",
+
   background: "linear-gradient(to bottom, #0f172a, #6b21a8)",
   color: "#fff",
 }));
@@ -139,26 +140,35 @@ export const TeamGrid = styled("div")(({ theme }) => ({
     gridTemplateColumns: "repeat(3, 1fr)",
   },
 
+  alignItems: "start",
+
   ".teamCard": {
+    display: "flex", // 1️⃣ vira flex container
+    flexDirection: "column", //    em coluna
     backgroundColor: "rgba(30, 41, 59, 0.7)",
     borderRadius: 12,
     padding: theme.spacing(4),
     boxShadow: theme.shadows[4],
     transition: "box-shadow 0.3s",
+    minHeight: 60, // 2️⃣ altura mínima
     "&:hover": {
       boxShadow: theme.shadows[8],
     },
   },
 
   ".teamIcon": {
-    width: 64,
-    height: 64,
-    fontSize: 32,
+    width: 70,
+    height: 70,
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: theme.spacing(2),
+    // cor de fundo será passada inline via sx ou style
+    "& svg": {
+      width: "100%",
+      height: "100%",
+    },
   },
 
   ".teamName": {
@@ -168,7 +178,9 @@ export const TeamGrid = styled("div")(({ theme }) => ({
   },
 
   ".teamDesc": {
+    fontSize: 15,
     color: "rgba(255, 255, 255, 0.7)",
+    marginTop: "auto",
   },
 }));
 

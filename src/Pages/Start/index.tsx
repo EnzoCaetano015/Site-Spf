@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
-import { Anchor, Clover, Gem, JapaneseYen, Landmark, Pyramid, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 import * as Styled from "./start.styled"
+import { Anubis, Ciclone, Hammer, Poseidon, Tample, Flower } from "../../Assets"
+import { useMediaQuery, useTheme } from "@mui/material"
 // import placeholder from "./placeholder.svg" // Substitua pela sua imagem real
 
 export default function SplashScreen() {
@@ -11,14 +13,20 @@ export default function SplashScreen() {
     const [activeSymbol, setActiveSymbol] = useState(0)
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
+    const theme = useTheme();
+    // true quando a largura for ≤ 600px
+    const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
+    // define width baseado no tamanho da tela
+    const iconWidth = isSmall ? 70 : 100;
+
     const mythologySymbols = [
-        { name: "Mitologia Nórdica", color: "#ef4444", icon: <Landmark size={30} /> },
-        { name: "Mitologia Japonesa", color: "#3b82f6", icon: <JapaneseYen size={30} /> },
-        { name: "El Dorado", color: "#eab308", icon: <Gem size={30} /> },
-        { name: "Atlântida", color: "#22c55e", icon: <Anchor size={30} /> },
-        { name: "Mitologia Egípcia", color: "#ec4899", icon: <Pyramid size={30} /> },
-        { name: "Mitologia Brasileira", color: "#a855f7", icon: <Clover size={30} /> },
-    ]
+        { name: "Mitologia Nórdica", color: "#ef4444", icon: <Hammer width={iconWidth} /> },
+        { name: "Mitologia Japonesa", color: "#3b82f6", icon: <Flower width={iconWidth} /> },
+        { name: "El Dorado", color: "#eab308", icon: <Tample width={iconWidth} /> },
+        { name: "Atlântida", color: "#22c55e", icon: <Poseidon width={iconWidth} /> },
+        { name: "Mitologia Egípcia", color: "#ec4899", icon: <Anubis width={iconWidth} /> },
+        { name: "Mitologia Brasileira", color: "#a855f7", icon: <Ciclone width={iconWidth} /> },
+    ];
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -122,27 +130,9 @@ export default function SplashScreen() {
                     ))}
                 </motion.div>
 
-                {/* Título com subtítulo animado */}
                 <Styled.TitleWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1 }}>
                     <Styled.Title>SPF 2025</Styled.Title>
                     <Styled.Divider initial={{ width: "0%" }} animate={{ width: "100%" }} transition={{ delay: 1.3, duration: 1.5 }} />
-                    <AnimatePresence>
-                        {activeSymbol !== null && (
-                            <Styled.Subtitle
-                                as={motion.p}
-                                key={activeSymbol}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: [0.42, 0, 0.58, 1] // easeInOut
-                                }}
-                            >
-                                {mythologySymbols[activeSymbol].name}
-                            </Styled.Subtitle>
-                        )}
-                    </AnimatePresence>
                 </Styled.TitleWrapper>
 
                 {/* Botão de entrada ou loader */}
