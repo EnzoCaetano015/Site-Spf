@@ -2,7 +2,6 @@ import { styled } from "@mui/material";
 
 export const Wrapper = styled("div")(() => ({
   minHeight: "100vh",
-
   background: "linear-gradient(to bottom, #0f172a, #6b21a8)",
   color: "#fff",
 }));
@@ -11,6 +10,7 @@ export const Container = styled("main")(({ theme }) => ({
   padding: theme.spacing(2, 2),
   maxWidth: 1280,
   margin: "0 auto",
+  overflowX: "hidden"
 }));
 
 export const HeroSection = styled("section")(({ theme }) => ({
