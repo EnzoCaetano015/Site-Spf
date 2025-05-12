@@ -61,7 +61,7 @@ export default function HomePage() {
                             </p>
                         </div>
                         <div className="heroImage">
-                            <Logo width={600} height={600}/>
+                            <Logo width={600} height={600} />
                         </div>
                     </motion.div>
                 </Styled.HeroSection>
@@ -73,9 +73,9 @@ export default function HomePage() {
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="card"
                     >
-                        <h2 style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <Typography  variant="h6" gutterBottom display="flex" alignItems="center" gap={1} mb={5}>
                             <Clock color="#fde047" /> Contagem regressiva do evento
-                        </h2>
+                        </Typography>
 
                         <Stack
                             direction={"row"}
@@ -272,9 +272,10 @@ export default function HomePage() {
                 </Styled.Section>
                 <Styled.Section>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: isVisible ? 1 : 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
-                        <h2 style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                            <Trophy color="#fde047" /> Competing Teams
-                        </h2>
+                        <Typography variant="h6" gutterBottom display="flex" alignItems="center" gap={1} mb={5}>
+                            <Trophy color="#fde047" />
+                           Equipes Competidoras
+                        </Typography>
                         <Styled.TeamGrid>
                             {[
                                 { name: "Mitologia Nórdica - 1A", color: "#ef4444", icon: <Hammer />, texto: "Guerreiros de Asgard, empunhando o poder do trovão de Thor e a sabedoria de Odin, enfrentam desafios com o poder dos antigos vikings." },

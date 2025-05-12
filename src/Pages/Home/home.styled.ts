@@ -31,15 +31,15 @@ export const HeroSection = styled("section")(({ theme }) => ({
   ".heroText": {
     flex: 1,
     h1: {
-      fontSize: "2.5rem",
+      fontSize: 30,
       fontWeight: 700,
       marginBottom: theme.spacing(2),
 
       [theme.breakpoints.up("md")]: {
-        fontSize: "3rem",
+        fontSize: 35,
       },
       [theme.breakpoints.up("lg")]: {
-        fontSize: "3.5rem",
+        fontSize: 40,
       },
     },
     p: {
