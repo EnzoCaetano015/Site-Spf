@@ -1,6 +1,6 @@
 import { Button, Stack, Typography, type AppBarProps } from "@mui/material"
 import * as Styled from "./index.styled"
-import { Home, LogIn, LogOut } from "lucide-react"
+import { LogIn, LogOut } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Logo } from "../../Assets"
 
@@ -31,24 +31,6 @@ export const NavBar = ({ adm, ...rest }: NavBarProps) => {
                 <Stack gap={2} direction={"row"}>
                     {!adm ? (
                         <>
-                            <Button
-                                onClick={() => { navigate('/Home') }}
-                                startIcon={<Home size={18} />}
-                                sx={{
-                                    color: "#E5E7EB",
-                                    fontSize: 13,
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    textTransform: "none",
-                                    "&:hover": {
-                                        backgroundColor: "#334155",
-                                    },
-                                }}
-                            >
-                                Home
-                            </Button>
-
-
                             <Button
                                 onClick={() => { navigate('/Login') }}
                                 startIcon={<LogIn size={18} />}
