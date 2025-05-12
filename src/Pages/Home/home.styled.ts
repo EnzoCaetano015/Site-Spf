@@ -150,7 +150,7 @@ export const TeamGrid = styled("div")(({ theme }) => ({
     padding: theme.spacing(4),
     boxShadow: theme.shadows[4],
     transition: "box-shadow 0.3s",
-    minHeight: 60, // 2️⃣ altura mínima
+    // minHeight: 60, // 2️⃣ altura mínima
     "&:hover": {
       boxShadow: theme.shadows[8],
     },

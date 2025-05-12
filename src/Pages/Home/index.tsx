@@ -281,13 +281,13 @@ export default function HomePage() {
 
                                 { name: "Mitologia Japonesa - 2A", color: "#3b82f6", icon: <Flower />, texto: "Guiados pelos espíritos do Xintoísmo e pelo código dos samurais, eles misturam harmonia e precisão como as flores de cerejeira ao vento da primavera." },
 
-                                { name: "El Dorado - 1B", color: "#eab308", icon: <Tample />, texto: "Buscadores da cidade dourada, eles enfrentam desafios com a astúcia de antigos exploradores e a riqueza do conhecimento esquecido." },
+                                { name: "El Dorado - 1B", color: "#eab308", icon: <Tample />, texto: "Buscadores da cidade dourada, eles enfrentam desafios com a astúcia de antigos exploradores e a riqueza do conhecimento esquecido de seus ancestrais." },
 
                                 { name: "Atlântida - 2B", color: "#22c55e", icon: <Poseidon />, texto: "Descendentes da civilização perdida, eles aproveitam os segredos das profundezas e a sabedoria de um mundo sob as ondas." },
 
                                 { name: "Mitologia Egípcia - 1C", color: "#ec4899", icon: <Anubis />, texto: "Abençoados pelos faraós e guiados por Anúbis e Ísis, eles resolvem os enigmas da esfinge e comandam os antigos poderes do Nilo." },
 
-                                { name: "Mitologia Brasileira - 2C", color: "#a855f7", icon: <Ciclone />, texto: "Guardiões dos mistérios da Amazônia, eles dançam com a astúcia do Saci e o encantamento das águas de Iara e das matas de Curupira." },
+                                { name: "Mitologia Brasileira - 2C", color: "#a855f7", icon: <Ciclone />, texto: "Guardiões dos mistérios da Amazônia, eles dançam com a astúcia do Saci e o encantamento das águas de Iara e das matas." },
 
                             ].map((team, index) => (
                                 <motion.div
