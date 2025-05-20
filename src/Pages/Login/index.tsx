@@ -130,7 +130,7 @@ export default function AdminLoginPage() {
                             onClick={()=>navigate('/Home')}
                             sx={{ color: "rgba(255,255,255,0.8)", fontSize: "1rem", textDecoration: "none", cursor:"pointer"}}
                         >
-                            Return to Home Page
+                            Retornar à página inicial
                         </Typography>
                     </Box>
                 </motion.div>

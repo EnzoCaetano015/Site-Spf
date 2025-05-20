@@ -9,6 +9,9 @@ import { Anubis, Ciclone, Hammer, Poseidon, Tample, Flower, Logo } from "../../A
 
 const TARGET_DATE = new Date("2025-05-29T00:00:00").getTime()
 
+const formatPts = (pts: number) =>
+  pts.toLocaleString("pt-BR");
+
 export default function HomePage() {
 
     const [isVisible, setIsVisible] = useState(false)
@@ -191,7 +194,7 @@ export default function HomePage() {
                                                 </Avatar>
                                                 <Typography variant="h5" sx={{ color: "#fff" }}>{team.name}</Typography>
                                                 <Typography variant="h6" sx={{ color: "#787A8B" }} display="block">
-                                                    {team.points} pts
+                                                    {formatPts(team.points)} pts
                                                 </Typography>
                                                 <Button
                                                     size="small"
@@ -259,7 +262,7 @@ export default function HomePage() {
                                                             </Box>
                                                         </TableCell>
                                                         <TableCell align="right">
-                                                            <Typography fontWeight="bold" variant="h6" sx={{ color: "#fff" }}>{team.points}</Typography>
+                                                            <Typography fontWeight="bold" variant="h6" sx={{ color: "#fff" }}>{formatPts(team.points)}</Typography>
                                                         </TableCell>
                                                     </TableRow>
                                                 ))}
